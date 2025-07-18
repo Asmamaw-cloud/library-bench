@@ -1,0 +1,6 @@
+{
+  "python.envFile": "/home/asmamaw/library-bench/.env",
+  "python.analysis.extraPaths": ["apps"],
+  "python.analysis.autoSearchPaths": true,
+  "python.analysis.useLibraryCodeForTypes": true
+}

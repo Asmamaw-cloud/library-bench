@@ -1,0 +1,61 @@
+2025-07-15 07:48:00,733 ERROR scheduler Exception in Enqueue Events for Site library.localhost
+Traceback (most recent call last):
+  File "/home/asmamaw/library-bench/apps/frappe/frappe/utils/scheduler.py", line 117, in enqueue_events_for_site
+    if is_scheduler_inactive():
+       ~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/asmamaw/library-bench/apps/frappe/frappe/utils/scheduler.py", line 161, in is_scheduler_inactive
+    if is_scheduler_disabled(verbose=verbose):
+       ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/asmamaw/library-bench/apps/frappe/frappe/utils/scheduler.py", line 173, in is_scheduler_disabled
+    scheduler_disabled = not frappe.get_system_settings("enable_scheduler")
+                             ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/home/asmamaw/library-bench/apps/frappe/frappe/core/doctype/system_settings/system_settings.py", line 231, in get_system_settings
+    system_settings = frappe.client_cache.get_doc("System Settings")
+  File "/home/asmamaw/library-bench/apps/frappe/frappe/utils/redis_wrapper.py", line 566, in get_doc
+    return self.get_value(key, generator=lambda: frappe.get_doc(doctype, name))
+           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/asmamaw/library-bench/apps/frappe/frappe/utils/redis_wrapper.py", line 529, in get_value
+    val = generator()
+  File "/home/asmamaw/library-bench/apps/frappe/frappe/utils/redis_wrapper.py", line 566, in <lambda>
+    return self.get_value(key, generator=lambda: frappe.get_doc(doctype, name))
+                                                 ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/asmamaw/library-bench/apps/frappe/frappe/model/utils/__init__.py", line 218, in wrapper
+    return dispatch(args[0])(*args, **kw)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/home/asmamaw/library-bench/apps/frappe/frappe/model/document.py", line 123, in get_doc_str
+    controller = get_controller(doctype)
+  File "/home/asmamaw/library-bench/apps/frappe/frappe/model/base_document.py", line 83, in get_controller
+    site_controllers[doctype] = import_controller(doctype)
+                                ~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/asmamaw/library-bench/apps/frappe/frappe/model/base_document.py", line 94, in import_controller
+    doctype_info = frappe.db.get_value("DocType", doctype, ("module", "custom", "is_tree"), as_dict=True)
+  File "/home/asmamaw/library-bench/apps/frappe/frappe/database/database.py", line 554, in get_value
+    result = self.get_values(
+    	doctype,
+    ...<13 lines>...
+    	wait=wait,
+    )
+  File "/home/asmamaw/library-bench/apps/frappe/frappe/database/database.py", line 667, in get_values
+    out = query.run(as_dict=as_dict, debug=debug, update=update, run=run, pluck=pluck)
+  File "/home/asmamaw/library-bench/apps/frappe/frappe/query_builder/utils.py", line 85, in execute_query
+    result = frappe.local.db.sql(query, params, *args, **kwargs)  # nosemgrep
+  File "/home/asmamaw/library-bench/apps/frappe/frappe/database/database.py", line 248, in sql
+    self.connect()
+    ~~~~~~~~~~~~^^
+  File "/home/asmamaw/library-bench/apps/frappe/frappe/database/database.py", line 146, in connect
+    self.get_connection()
+    ~~~~~~~~~~~~~~~~~~~^^
+  File "/home/asmamaw/library-bench/apps/frappe/frappe/database/mariadb/mysqlclient.py", line 109, in get_connection
+    conn = self._get_connection()
+  File "/home/asmamaw/library-bench/apps/frappe/frappe/database/mariadb/mysqlclient.py", line 114, in _get_connection
+    return self.create_connection()
+           ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/asmamaw/library-bench/apps/frappe/frappe/database/mariadb/mysqlclient.py", line 117, in create_connection
+    return MySQLdb.connect(**self.get_connection_settings())
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/asmamaw/library-bench/env/lib64/python3.13/site-packages/MySQLdb/__init__.py", line 121, in Connect
+    return Connection(*args, **kwargs)
+  File "/home/asmamaw/library-bench/env/lib64/python3.13/site-packages/MySQLdb/connections.py", line 200, in __init__
+    super().__init__(*args, **kwargs2)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+MySQLdb.OperationalError: (1045, "Access denied for user '_85671c75012c9533'@'localhost' (using password: YES)")

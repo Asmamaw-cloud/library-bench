@@ -1,0 +1,4 @@
+_HiStOrY_V2_
+select\040name\040from\040`tabUser`;
+desc\040tabArticle;
+select\040*\040from\040tabArticle;

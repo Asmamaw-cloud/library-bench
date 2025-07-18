@@ -1,0 +1,4 @@
+2025-07-15 07:58:05,742 INFO ipython === bench console session ===
+2025-07-15 07:58:05,742 INFO ipython print("Hello world")
+2025-07-15 07:58:05,742 INFO ipython 5+4
+2025-07-15 07:58:05,742 INFO ipython === session end ===

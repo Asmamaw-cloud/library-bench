@@ -1,0 +1,82 @@
+2025-07-15 07:32:09,291 DEBUG cd library-bench && python3 -m venv env
+2025-07-15 07:32:11,457 DEBUG cd library-bench && /home/asmamaw/library-bench/env/bin/python -m pip install --quiet --upgrade pip
+2025-07-15 07:32:14,237 DEBUG cd library-bench && /home/asmamaw/library-bench/env/bin/python -m pip install --quiet wheel
+2025-07-15 07:32:16,183 LOG Getting frappe
+2025-07-15 07:32:16,183 DEBUG cd library-bench/apps && git clone https://github.com/frappe/frappe.git  --depth 1 --origin upstream
+2025-07-15 07:32:42,912 LOG Installing frappe
+2025-07-15 07:32:42,914 DEBUG cd /home/asmamaw/library-bench && /home/asmamaw/library-bench/env/bin/python -m pip install --quiet --upgrade -e /home/asmamaw/library-bench/apps/frappe 
+2025-07-15 07:35:23,249 DEBUG cd /home/asmamaw/library-bench/apps/frappe && yarn install --check-files
+2025-07-15 07:36:18,581 DEBUG cd library-bench && bench build
+2025-07-15 07:36:18,707 INFO /usr/local/bin/bench build
+2025-07-15 07:36:36,331 LOG setting up backups
+2025-07-15 07:36:36,369 LOG backups were set up
+2025-07-15 07:36:36,369 INFO Bench library-bench initialized
+2025-07-15 07:41:10,451 INFO /usr/local/bin/bench start
+2025-07-15 07:41:10,716 INFO /usr/local/bin/bench schedule
+2025-07-15 07:41:10,717 INFO /usr/local/bin/bench worker
+2025-07-15 07:41:10,735 INFO /usr/local/bin/bench watch
+2025-07-15 07:41:10,754 INFO /usr/local/bin/bench serve --port 8000
+2025-07-15 07:42:12,321 INFO /usr/local/bin/bench find .
+2025-07-15 07:42:51,734 INFO /usr/local/bin/bench new-app library_management
+2025-07-15 07:42:51,737 LOG creating new app library_management
+2025-07-15 07:44:27,014 LOG Installing library_management
+2025-07-15 07:44:27,015 DEBUG cd /home/asmamaw/library-bench && /home/asmamaw/library-bench/env/bin/python -m pip install --quiet --upgrade -e /home/asmamaw/library-bench/apps/library_management 
+2025-07-15 07:44:45,739 DEBUG bench build --app library_management
+2025-07-15 07:44:45,890 INFO /usr/local/bin/bench build --app library_management
+2025-07-15 07:46:37,844 INFO /usr/local/bin/bench new-site library.localhost
+2025-07-15 07:47:32,274 INFO /usr/local/bin/bench new-site library.localhost
+2025-07-15 07:47:53,281 INFO /usr/local/bin/bench new-site library.localhost --force
+2025-07-15 07:49:17,083 INFO /usr/local/bin/bench new-site library.localhost --force
+2025-07-15 07:51:51,601 INFO /usr/local/bin/bench --site library.localhost add-to-hosts
+2025-07-15 07:52:26,055 INFO /usr/local/bin/bench start
+2025-07-15 07:52:26,330 INFO /usr/local/bin/bench schedule
+2025-07-15 07:52:26,341 INFO /usr/local/bin/bench serve --port 8000
+2025-07-15 07:52:26,348 INFO /usr/local/bin/bench watch
+2025-07-15 07:52:26,374 INFO /usr/local/bin/bench worker
+2025-07-15 07:55:58,972 INFO /usr/local/bin/bench --site library.localhost install-app library_management
+2025-07-15 07:56:52,345 INFO /usr/local/bin/bench --site library.localhost list-apps
+2025-07-15 07:57:39,979 INFO /usr/local/bin/bench --site library.localhost console
+2025-07-15 07:58:22,856 INFO /usr/local/bin/bench --site library.localhost mariadb
+2025-07-15 07:59:24,236 INFO /usr/local/bin/bench --site library.localhost backup
+2025-07-15 08:00:18,814 INFO /usr/local/bin/bench --help
+2025-07-15 08:01:10,439 INFO /usr/local/bin/bench set-config -g developer_mode true
+2025-07-15 08:02:01,069 INFO /usr/local/bin/bench start
+2025-07-15 08:02:01,332 INFO /usr/local/bin/bench schedule
+2025-07-15 08:02:01,332 INFO /usr/local/bin/bench watch
+2025-07-15 08:02:01,333 INFO /usr/local/bin/bench serve --port 8000
+2025-07-15 08:02:01,337 INFO /usr/local/bin/bench worker
+2025-07-15 08:13:26,680 INFO /usr/local/bin/bench --site library.localhost mariadb
+2025-07-15 08:33:40,645 INFO /usr/local/bin/bench --site library.localhost mariadb
+2025-07-15 12:00:00,446 INFO /usr/local/bin/bench --verbose --site all backup
+2025-07-15 13:44:38,417 INFO /usr/local/bin/bench set-config -g server_script_enabled 1
+2025-07-16 00:00:00,725 INFO /usr/local/bin/bench --verbose --site all backup
+2025-07-16 07:22:49,540 INFO /usr/local/bin/bench start
+2025-07-16 07:22:49,845 INFO /usr/local/bin/bench watch
+2025-07-16 07:22:49,854 INFO /usr/local/bin/bench worker
+2025-07-16 07:22:49,865 INFO /usr/local/bin/bench serve --port 8000
+2025-07-16 07:22:49,887 INFO /usr/local/bin/bench schedule
+2025-07-16 07:42:52,268 INFO /usr/local/bin/bench start
+2025-07-16 07:44:10,711 INFO /usr/local/bin/bench stop
+2025-07-16 07:45:36,762 INFO /usr/local/bin/bench start
+2025-07-16 07:46:26,194 INFO /usr/local/bin/bench start
+2025-07-16 07:46:26,457 INFO /usr/local/bin/bench worker
+2025-07-16 07:46:26,463 INFO /usr/local/bin/bench watch
+2025-07-16 07:46:26,465 INFO /usr/local/bin/bench schedule
+2025-07-16 07:46:26,471 INFO /usr/local/bin/bench serve --port 8000
+2025-07-16 07:47:23,489 INFO /usr/local/bin/bench start
+2025-07-16 07:47:23,736 INFO /usr/local/bin/bench schedule
+2025-07-16 07:47:23,738 INFO /usr/local/bin/bench watch
+2025-07-16 07:47:23,747 INFO /usr/local/bin/bench worker
+2025-07-16 07:47:23,780 INFO /usr/local/bin/bench serve --port 8000
+2025-07-16 07:48:02,747 INFO /usr/local/bin/bench start --no-scheduler
+2025-07-16 07:48:02,752 WARNING /usr/local/bin/bench start --no-scheduler executed with exit code 2
+2025-07-16 07:49:30,811 INFO /usr/local/bin/bench start
+2025-07-16 07:49:31,041 INFO /usr/local/bin/bench worker
+2025-07-16 07:49:31,042 INFO /usr/local/bin/bench watch
+2025-07-16 07:49:31,047 INFO /usr/local/bin/bench serve --port 8000
+2025-07-16 08:17:09,084 INFO /usr/local/bin/bench start
+2025-07-16 08:17:09,314 INFO /usr/local/bin/bench serve --port 8000
+2025-07-16 08:17:09,319 INFO /usr/local/bin/bench watch
+2025-07-16 08:17:09,330 INFO /usr/local/bin/bench worker
+2025-07-16 12:00:00,626 INFO /usr/local/bin/bench --verbose --site all backup
+2025-07-17 18:00:01,046 INFO /usr/local/bin/bench --verbose --site all backup
